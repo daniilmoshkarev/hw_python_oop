@@ -117,7 +117,6 @@ class Swimming(Training):
                 / self.M_IN_KM / self.duration)
 
     def get_spent_calories(self) -> float:
-        super().get_spent_calories()
         return ((self.get_mean_speed() + self.COEFF_1)
                 * self.COEFF_2 * self.weight * self.duration)
 
@@ -127,8 +126,7 @@ def read_package(workout_type: str, data: list) -> Training:
     storage_data = {'SWM': Swimming, 'RUN': Running, 'WLK': SportsWalking}
     if workout_type not in storage_data:
         raise ValueError("Неподдерживаемый тип тренировки")
-    else:
-        return storage_data[workout_type](*data)
+    return storage_data[workout_type](*data)
 
 
 def main(training: Training) -> None:
