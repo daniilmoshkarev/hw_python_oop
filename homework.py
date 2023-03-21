@@ -78,9 +78,6 @@ class SportsWalking(Training):
     MIN_IN_HOUR: ClassVar[int] = 60
     M_SEC: ClassVar[float] = 0.278
 
-    action: int
-    duration: float
-    weight: float
     height: int
 
     def get_spent_calories(self) -> float:
@@ -96,9 +93,6 @@ class Swimming(Training):
     COEFF_1: ClassVar[float] = 1.1
     COEFF_2: ClassVar[int] = 2
 
-    action: int
-    duration: float
-    weight: float
     length_pool: int
     count_pool: int
 
